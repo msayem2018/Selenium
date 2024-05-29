@@ -1,0 +1,11 @@
+//How to convert an string to integer 
+@Test(priority=12, description="Verify Filter and Search Results")
+	public void filterAudiSpecial() throws InterruptedException {
+		String searchAudiSpecial=driver.findElement(By.xpath("//*[contains(text(), 'results')]")).getText();
+		System.out.println(searchAudiSpecial);
+		StringBuilder srchAudiSpecial = new StringBuilder(searchAudiSpecial);
+		srchAudiSpecial.delete(3,  25);
+		System.out.println(srchAudiSpecial);
+		String searchSpecial =srchAudiSpecial.toString();
+		int searchResults = Integer.parseInt(searchSpecial.trim());
+		System.out.println(searchResults);
